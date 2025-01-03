@@ -1,5 +1,5 @@
-# Custom Programming Language
-This template is for you to download in order to make your own coding language. You may fork this template and add to it, if you like. The file extension for this programming language is `.myopl`. The `basic.py` file has support for:
+# Custom Programming Language (Changed to `Vermicelli`)
+This template is for you to download in order to make your own coding language. You may fork this template and add to it, if you like. The file extension for this programming language is `.myopl` (changed to `.vrll`). The `basic.py` file has support for:
 
 - Parsing
 - Lexing
