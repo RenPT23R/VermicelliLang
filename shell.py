@@ -1,7 +1,11 @@
 import basic
+import sys
 
 while True:
-	text = input('basic > ')
+	print("Insert exit to exit\n\n")
+	text = input('vrll > ')
+	if text == "exit":
+		sys.exit()
 	if text.strip() == "": continue
 	result, error = basic.run("<stdin>", text)
 

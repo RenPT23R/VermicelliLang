@@ -1,24 +1,24 @@
 statements  : NEWLINE* statement (NEWLINE+ statement)* NEWLINE*
 
-statement		: KEYWORD:RETURN expr?
-						: KEYWORD:CONTINUE
-						: KEYWORD:BREAK
+statement		: KEYWORD:return expr?
+						: KEYWORD:continue
+						: KEYWORD:break
 						: expr
 
-expr        : KEYWORD:VAR IDENTIFIER EQ expr
-            : comp-expr ((KEYWORD:AND|KEYWORD:OR) comp-expr)*
+expr        : KEYWORD:new IDENTIFIER EQ expr
+            : comp-expr ((KEYWORD:&&|KEYWORD:||) comp-expr)*
 
 comp-expr   : NOT comp-expr
-            : arith-expr ((EE|LT|GT|LTE|GTE) arith-expr)*
+            : arith-expr ((==|<<|>>|<=|>=) arith-expr)*
 
-arith-expr  :	term ((PLUS|MINUS) term)*
+arith-expr  :	term ((+|-) term)*
 
-term        : factor ((MUL|DIV) factor)*
+term        : factor ((*|/) factor)*
 
-factor      : (PLUS|MINUS) factor
+factor      : (+|-) factor
             : power
 
-power       : call (POW factor)*
+power       : call (^ factor)*
 
 call        : atom (LPAREN (expr (COMMA expr)*)? RPAREN)?
 
